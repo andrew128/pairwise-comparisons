@@ -15,7 +15,10 @@ class PairwiseComparisonSession:
         return self.option_map[index]
 
     def store_result_from_user(self, option_index) -> None:
-        self.option_score[option_index] += 1
+        if option_index not in self.option_score:
+            self.option_score[option_index] = 1
+        else:
+            self.option_score[option_index] += 1
 
     def generate_results(self) -> Tuple[int, str, int]:
         """

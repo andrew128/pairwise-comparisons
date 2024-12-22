@@ -31,7 +31,9 @@ def main():
     print(f"Working with options: {options}")
 
     pairwise_comparison_session = PairwiseComparisonSession()
-    pairwise_comparison_session.store_options(args.options)
+    pairwise_comparison_session.store_options(options)
+
+    print(pairwise_comparison_session.option_map)
 
     for i in range(0, len(options)):
         for j in range(i + 1, len(options)):
