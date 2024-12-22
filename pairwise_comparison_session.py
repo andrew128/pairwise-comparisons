@@ -1,22 +1,26 @@
-from typing import List
+from typing import List, Dict
 
 class PairwiseComparisonSession:
-    def read_options(options: List[int]) -> None:
-        pass
+    def __init__(self):
+        self.option_map: Dict[int, str] = {}
 
-    def prompt_user():
+    def read_options(self, options: List[int], names: List[str]) -> None:
+        """Store mapping of IDs to their names"""
+        self.option_map = dict(zip(options, names))
+
+    def prompt_user(self):
         '''
         Prompt the user for two options
         '''
         pass
 
-    def generate_options_to_compare():
+    def generate_options_to_compare(self):
         '''
         '''
         pass
 
-    def generate_results():
+    def generate_results(self):
         pass
 
-    def run():
+    def run(self):
         pass
